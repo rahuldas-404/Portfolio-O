@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Das - Backend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="leading-relaxed">
+
+    <!-- Left Social Sidebar -->
+    <div class="hidden lg:flex flex-col items-center fixed bottom-0 left-6 xl:left-10 z-10">
+        <a href="https://github.com/rahuldas-404" target="_blank" rel="noopener noreferrer" class="text-[#a8b2d1] hover:text-[#64ffda] transition-all duration-300 hover:-translate-y-1 text-xl xl:text-2xl mb-6"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/rahul-das-404/" target="_blank" rel="noopener noreferrer" class="text-[#a8b2d1] hover:text-[#64ffda] transition-all duration-300 hover:-translate-y-1 text-xl xl:text-2xl mb-6"><i class="fab fa-linkedin"></i></a>
+        <div class="h-24 w-px bg-[#a8b2d1]"></div>
+    </div>
+
+    <!-- Right Email Sidebar -->
+    <div class="hidden lg:flex flex-col items-center fixed bottom-0 right-6 xl:right-10 z-10">
+        <a href="mailto:rahulkd403@gmail.com" class="text-[#a8b2d1] hover:text-[#64ffda] transition-all duration-300 hover:-translate-y-1 text-xs xl:text-sm mb-6" style="writing-mode: vertical-rl;">
+            rahulkd403@gmail.com
+        </a>
+        <div class="h-24 w-px bg-[#a8b2d1]"></div>
+    </div>
+
+    <!-- Header & Nav -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <nav class="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-xl sm:text-2xl font-bold text-[#64ffda] cursor-pointer hover:scale-110 transition-transform duration-300">RD</div>
+            
+            <!-- Desktop Navigation & Actions -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <ul class="flex items-center space-x-6">
+                    <li><a href="#about" class="hover:text-[#64ffda] transition-colors duration-300 relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#64ffda] transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#experience" class="hover:text-[#64ffda] transition-colors duration-300 relative group">
+                        Experience
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#64ffda] transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#projects" class="hover:text-[#64ffda] transition-colors duration-300 relative group">
+                        Projects
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#64ffda] transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#skills" class="hover:text-[#64ffda] transition-colors duration-300 relative group">
+                        Skills
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#64ffda] transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#contact" class="hover:text-[#64ffda] transition-colors duration-300 relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#64ffda] transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                </ul>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="text-[#a8b2d1] hover:text-[#64ffda] transition-colors duration-300 text-xl">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="mailto:rahulkd403@gmail.com" class="btn-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center">Get In Touch</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Actions (Right Side) -->
+            <div class="lg:hidden flex items-center space-x-2 relative z-50">
+                <button id="theme-toggle-mobile" class="text-[#a8b2d1] hover:text-[#64ffda] transition-colors duration-300 text-lg p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-[#112240]">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="mobile-menu-toggle" class="text-[#a8b2d1] hover:text-[#64ffda] transition-colors duration-300 text-xl p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-[#112240]">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="lg:hidden fixed left-0 right-0 bg-[#0a192f] border-t border-[#233554] transform -translate-y-full opacity-0 transition-all duration-300 ease-in-out z-40 shadow-lg">
+            <div class="container mx-auto px-4 py-6">
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="#about" class="block py-3 px-4 text-[#8892b0] hover:text-[#64ffda] transition-all duration-300 mobile-nav-link rounded-lg hover:bg-[#112240]">
+                        <i class="fas fa-user mr-3"></i>About
+                    </a></li>
+                    <li><a href="#experience" class="block py-3 px-4 text-[#8892b0] hover:text-[#64ffda] transition-all duration-300 mobile-nav-link rounded-lg hover:bg-[#112240]">
+                        <i class="fas fa-briefcase mr-3"></i>Experience
+                    </a></li>
+                    <li><a href="#projects" class="block py-3 px-4 text-[#8892b0] hover:text-[#64ffda] transition-all duration-300 mobile-nav-link rounded-lg hover:bg-[#112240]">
+                        <i class="fas fa-folder-open mr-3"></i>Projects
+                    </a></li>
+                    <li><a href="#skills" class="block py-3 px-4 text-[#8892b0] hover:text-[#64ffda] transition-all duration-300 mobile-nav-link rounded-lg hover:bg-[#112240]">
+                        <i class="fas fa-code mr-3"></i>Skills
+                    </a></li>
+                    <li><a href="#contact" class="block py-3 px-4 text-[#8892b0] hover:text-[#64ffda] transition-all duration-300 mobile-nav-link rounded-lg hover:bg-[#112240]">
+                        <i class="fas fa-envelope mr-3"></i>Contact
+                    </a></li>
+                </ul>
+                <div class="mt-6 pt-4 border-t border-[#233554]">
+                    <a href="mailto:rahulkd403@gmail.com" class="btn-primary font-medium rounded-lg text-sm px-6 py-3 text-center w-full block">
+                        <i class="fas fa-paper-plane mr-2"></i>Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 pt-20 sm:pt-24">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center relative px-4 sm:px-6">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent"></div>
+            <div class="relative z-10 max-w-6xl mx-auto">
+                <h1 class="text-base sm:text-lg text-[#64ffda] font-mono mb-2 sm:mb-4 animate-fade-in">Hi, my name is</h1>
+                <h2 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#ccd6f6] mt-1 sm:mt-2 animate-slide-up leading-tight">Rahul Das.</h2>
+                <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#8892b0] mt-1 animate-slide-up-delay leading-tight">
+                    <span id="typing-text" class="typing-animation">I build things for the web.</span>
+                </h3>
+                <p class="mt-4 sm:mt-6 max-w-2xl text-[#8892b0] text-base sm:text-lg leading-relaxed animate-fade-in-delay">
+                    I'm a <span class="text-[#64ffda] font-semibold">Java Backend Developer</span> with a passion for architecting and developing robust, scalable microservices and RESTful APIs. I have experience in building enterprise-level applications with a focus on performance, security, and data integrity.
+                </p>
+                <div class="mt-6 sm:mt-10 flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
+                        <a href="mailto:rahulkd403@gmail.com" class="btn-primary font-medium rounded-lg text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 text-center pulse-glow w-full sm:w-auto">
+                            <i class="fas fa-envelope mr-2"></i>Contact Me
+                        </a>
+                        <a href="#" id="download-resume" class="btn-secondary font-medium rounded-lg text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 text-center w-full sm:w-auto">
+                            <i class="fas fa-download mr-2"></i>Download Resume
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center sm:justify-start space-x-6 w-full sm:w-auto">
+                        <a href="https://github.com/rahuldas-404" target="_blank" rel="noopener noreferrer" class="text-[#a8b2d1] hover:text-[#64ffda] transition-all duration-300 text-2xl hover:scale-110">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rahul-das-404/" target="_blank" rel="noopener noreferrer" class="text-[#a8b2d1] hover:text-[#64ffda] transition-all duration-300 text-2xl hover:scale-110">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#projects" class="text-[#a8b2d1] hover:text-[#64ffda] transition-all duration-300 text-2xl hover:scale-110">
+                            <i class="fas fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 sm:py-20 lg:py-24 reveal px-4 sm:px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold section-heading mb-6 sm:mb-8 relative w-full flex items-center">
+                    <span class="font-mono text-lg sm:text-2xl mr-3 sm:mr-4">01.</span> About Me
+                    <span class="ml-4 sm:ml-6 h-px w-1/4 sm:w-1/3 bg-[#233554]"></span>
+                </h2>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12">
+                    <div class="lg:col-span-3 text-[#8892b0] space-y-4 text-sm sm:text-base">
+                        <p>
+                            Hello! I'm Rahul, a backend developer based in Bengaluru, India. My journey into programming began with a fascination for how complex systems work seamlessly behind the scenes. This curiosity led me to pursue a Bachelor of Technology in Computer Science Engineering.
+                        </p>
+                        <p>
+                            Fast-forward to today, and I've had the privilege of working at <span class="text-[#64ffda]">Tata Consultancy Services (TCS)</span>, where I've honed my skills in architecting and developing microservices-based backend systems. My main focus these days is building accessible, high-performance products and digital experiences for a variety of clients.
+                        </p>
+                        <p>
+                            I'm passionate about clean code, efficient algorithms, and leveraging cutting-edge technologies to solve real-world problems. From designing database solutions with SAP HANA to implementing distributed caching with Redis, I enjoy every aspect of the backend development lifecycle.
+                        </p>
+                    </div>
+                     <div class="lg:col-span-2 flex items-center justify-center order-first lg:order-last">
+                        <div class="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-2xl overflow-hidden relative group float">
+                            <div class="absolute inset-0 bg-gradient-to-br from-[#64ffda] to-[#00d4ff] z-10 mix-blend-multiply group-hover:bg-transparent transition-all duration-500"></div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-[#64ffda]/20 to-transparent z-20"></div>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Rahul Das" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <div class="absolute inset-0 border-2 border-[#64ffda]/30 rounded-2xl group-hover:border-[#64ffda] transition-all duration-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-16 sm:py-20 lg:py-24 reveal px-4 sm:px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold section-heading mb-6 sm:mb-8 relative w-full flex items-center">
+                     <span class="font-mono text-lg sm:text-2xl mr-3 sm:mr-4">02.</span> Where I've Worked
+                     <span class="ml-4 sm:ml-6 h-px w-1/4 sm:w-1/3 bg-[#233554]"></span>
+                </h2>
+                <div class="max-w-4xl">
+                    <!-- Desktop Layout -->
+                    <div class="hidden md:flex">
+                        <div class="w-1/4">
+                            <ul id="job-tabs" class="flex flex-col">
+                                <li><button data-target="panel-0" class="job-tab active text-left w-full px-4 py-2 border-l-2 border-[#64ffda] text-[#64ffda] bg-[#112240]">TCS</button></li>
+                                <li><button data-target="panel-1" class="job-tab text-left w-full px-4 py-2 border-l-2 border-[#233554] text-[#8892b0] hover:bg-[#112240] hover:text-[#64ffda]">BEL</button></li>
+                            </ul>
+                        </div>
+                        <div class="w-3/4 pl-8">
+                            <div id="panel-0" class="job-panel">
+                                <h3 class="text-lg sm:text-xl font-semibold text-[#ccd6f6]">Java Backend Developer <span class="text-[#64ffda]">@ Tata Consultancy Services</span></h3>
+                                <p class="text-sm font-mono text-[#8892b0] mb-4">Nov 2024 - Present</p>
+                                <ul class="list-disc list-inside space-y-2 text-[#8892b0] text-sm sm:text-base">
+                                    <li>Architected and developed a microservices-based backend for the SAP BTP Deal Modelling Tool.</li>
+                                    <li>Built RESTful APIs and core business logic using Java 17 and Spring Boot 3.3.1.</li>
+                                    <li>Designed and implemented database solutions using SAP HANA with Spring JPA and Hibernate.</li>
+                                    <li>Developed a distributed caching architecture using Redis, reducing API response times by 40%.</li>
+                                    <li>Implemented enterprise-grade security using XSUAA-based authentication.</li>
+                                    <li>Built an automated testing framework achieving 85% code coverage and set up CI/CD pipelines.</li>
+                                </ul>
+                            </div>
+                             <div id="panel-1" class="job-panel hidden">
+                                <h3 class="text-lg sm:text-xl font-semibold text-[#ccd6f6]">Java Technical Intern <span class="text-[#64ffda]">@ Bharat Electronics Limited</span></h3>
+                                <p class="text-sm font-mono text-[#8892b0] mb-4">Jun 2023 - Aug 2023</p>
+                                <ul class="list-disc list-inside space-y-2 text-[#8892b0] text-sm sm:text-base">
+                                    <li>Developed Java backend applications and RESTful API endpoints.</li>
+                                    <li>Implemented a Zeroize Function for secure data deletion from a PostgreSQL database.</li>
+                                    <li>Collaborated on database optimization and system architecture, reducing bugs by 50%.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Layout -->
+                    <div class="md:hidden space-y-6">
+                        <div class="job-panel-mobile">
+                            <h3 class="text-lg font-semibold text-[#ccd6f6] mb-2">Java Backend Developer <span class="text-[#64ffda]">@ Tata Consultancy Services</span></h3>
+                            <p class="text-sm font-mono text-[#8892b0] mb-4">Nov 2024 - Present</p>
+                            <ul class="list-disc list-inside space-y-2 text-[#8892b0] text-sm">
+                                <li>Architected and developed a microservices-based backend for the SAP BTP Deal Modelling Tool.</li>
+                                <li>Built RESTful APIs and core business logic using Java 17 and Spring Boot 3.3.1.</li>
+                                <li>Designed and implemented database solutions using SAP HANA with Spring JPA and Hibernate.</li>
+                                <li>Developed a distributed caching architecture using Redis, reducing API response times by 40%.</li>
+                                <li>Implemented enterprise-grade security using XSUAA-based authentication.</li>
+                                <li>Built an automated testing framework achieving 85% code coverage and set up CI/CD pipelines.</li>
+                            </ul>
+                        </div>
+                        <div class="job-panel-mobile">
+                            <h3 class="text-lg font-semibold text-[#ccd6f6] mb-2">Java Technical Intern <span class="text-[#64ffda]">@ Bharat Electronics Limited</span></h3>
+                            <p class="text-sm font-mono text-[#8892b0] mb-4">Jun 2023 - Aug 2023</p>
+                            <ul class="list-disc list-inside space-y-2 text-[#8892b0] text-sm">
+                                <li>Developed Java backend applications and RESTful API endpoints.</li>
+                                <li>Implemented a Zeroize Function for secure data deletion from a PostgreSQL database.</li>
+                                <li>Collaborated on database optimization and system architecture, reducing bugs by 50%.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 sm:py-20 lg:py-24 reveal px-4 sm:px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold section-heading mb-6 sm:mb-8 relative w-full flex items-center">
+                    <span class="font-mono text-lg sm:text-2xl mr-3 sm:mr-4">03.</span> Things I've Built
+                    <span class="ml-4 sm:ml-6 h-px w-1/4 sm:w-1/3 bg-[#233554]"></span>
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <!-- Project 1 -->
+                    <div class="project-card rounded-lg p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-4">
+                                <i class="far fa-folder-open text-3xl text-[#64ffda]"></i>
+                                <a href="https://github.com/rahuldas-404" target="_blank" rel="noopener noreferrer" class="text-[#a8b2d1] hover:text-[#64ffda] text-xl"><i class="fab fa-github"></i></a>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#ccd6f6] mb-2">NASA APOD Explorer</h3>
+                            <p class="text-[#8892b0] text-sm mb-4">A full-stack web application with non-blocking WebClient API integration to process NASA APOD requests with optimized response caching.</p>
+                        </div>
+                        <ul class="flex flex-wrap text-xs font-mono text-[#8892b0] mt-4">
+                            <li class="mr-3 mb-1">Java</li>
+                            <li class="mr-3 mb-1">Spring Boot</li>
+                            <li class="mr-3 mb-1">WebClient</li>
+                            <li class="mr-3 mb-1">Thymeleaf</li>
+                            <li class="mr-3 mb-1">H2</li>
+                        </ul>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-card rounded-lg p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-4">
+                                <i class="far fa-folder-open text-3xl text-[#64ffda]"></i>
+                                <a href="https://github.com/rahuldas-404/NewsLinker" target="_blank" rel="noopener noreferrer" class="text-[#a8b2d1] hover:text-[#64ffda] text-xl"><i class="fab fa-github"></i></a>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#ccd6f6] mb-2">NewsLinker</h3>
+                            <p class="text-[#8892b0] text-sm mb-4">An Android app with an efficient API integration layer for news articles, featuring real-time push notifications via Firebase Cloud Messaging.</p>
+                        </div>
+                        <ul class="flex flex-wrap text-xs font-mono text-[#8892b0] mt-4">
+                            <li class="mr-3 mb-1">Kotlin</li>
+                            <li class="mr-3 mb-1">Android</li>
+                            <li class="mr-3 mb-1">Retrofit</li>
+                            <li class="mr-3 mb-1">Firebase (FCM)</li>
+                        </ul>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="project-card rounded-lg p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-4">
+                               <i class="far fa-folder-open text-3xl text-[#64ffda]"></i>
+                                <a href="https://github.com/rahuldas-404/infisky34" target="_blank" rel="noopener noreferrer" class="text-[#a8b2d1] hover:text-[#64ffda] text-xl"><i class="fab fa-github"></i></a>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#ccd6f6] mb-2">Multipurpose Miniature Satellite</h3>
+                            <p class="text-[#8892b0] text-sm mb-4">Ground Control and Flight Software Systems for a VLOM satellite mission, enabling large-scale data collection and real-time telemetry visualization.</p>
+                        </div>
+                        <ul class="flex flex-wrap text-xs font-mono text-[#8892b0] mt-4">
+                            <li class="mr-3 mb-1">React.js</li>
+                            <li class="mr-3 mb-1">Node.js</li>
+                            <li class="mr-3 mb-1">Express</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 sm:py-20 lg:py-24 reveal px-4 sm:px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold section-heading mb-6 sm:mb-8 relative w-full flex items-center">
+                    <span class="font-mono text-lg sm:text-2xl mr-3 sm:mr-4">04.</span> Skills & Technologies
+                    <span class="ml-4 sm:ml-6 h-px w-1/4 sm:w-1/3 bg-[#233554]"></span>
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 text-center">
+                <div class="skill-item" data-skill="Java">
+                    <i class="devicon-java-plain"></i>
+                    <p>Java</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="Spring Boot">
+                    <i class="devicon-spring-plain"></i>
+                    <p>Spring Boot</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="Hibernate">
+                    <i class="devicon-hibernate-plain"></i>
+                    <p>Hibernate</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="Microservices">
+                    <i class="fas fa-cogs"></i>
+                    <p>Microservices</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="PostgreSQL">
+                    <i class="devicon-postgresql-plain"></i>
+                    <p>PostgreSQL</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 82%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="Redis">
+                    <i class="devicon-redis-plain"></i>
+                    <p>Redis</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="Docker">
+                    <i class="devicon-docker-plain"></i>
+                    <p>Docker</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="SAP BTP">
+                    <i class="devicon-sap-original"></i>
+                    <p>SAP BTP</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="GitHub Actions">
+                    <i class="devicon-github-original"></i>
+                    <p>GitHub Actions</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 78%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="JUnit">
+                    <i class="devicon-junit-plain"></i>
+                    <p>JUnit</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="Kotlin">
+                    <i class="devicon-kotlin-plain"></i>
+                    <p>Kotlin</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="Node.js">
+                    <i class="devicon-nodejs-plain"></i>
+                    <p>Node.js</p>
+                    <div class="skill-progress mt-2 h-1 bg-[#233554] rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-[#64ffda] to-[#00d4ff] rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 sm:py-20 lg:py-24 text-center reveal px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-lg sm:text-2xl font-mono text-[#64ffda] mb-2">05. What's Next?</h2>
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#ccd6f6] mb-4">Get In Touch</h3>
+                <p class="max-w-2xl mx-auto text-[#8892b0] mb-8 sm:mb-12 text-base sm:text-lg leading-relaxed">
+                    I'm currently seeking new opportunities and my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                </p>
+                <div class="flex flex-col items-center space-y-6">
+                    <div class="relative inline-block">
+                        <p id="email" class="text-lg sm:text-xl md:text-2xl font-mono text-[#ccd6f6] mb-6 sm:mb-8 cursor-pointer hover:text-[#64ffda] transition-colors duration-300 break-all" onclick="copyEmail()">
+                            rahulkd403@gmail.com
+                        </p>
+                        <div id="email-copy-toast" class="absolute -bottom-12 left-1/2 -translate-x-1/2 bg-green-500 text-white text-sm py-2 px-4 rounded-lg opacity-0 transform translate-y-2 shadow-lg">
+                            <i class="fas fa-check mr-2"></i>Copied to clipboard!
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="mailto:rahulkd403@gmail.com" class="btn-primary font-medium rounded-lg text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 text-center pulse-glow w-full sm:w-auto">
+                            <i class="fas fa-paper-plane mr-2"></i>Say Hello
+                        </a>
+                        <a href="#" id="download-resume-contact" class="btn-secondary font-medium rounded-lg text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 text-center w-full sm:w-auto">
+                            <i class="fas fa-download mr-2"></i>Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-[#64ffda] text-[#0a192f] w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg hover:bg-[#00d4ff] transition-all duration-300 opacity-0 pointer-events-none z-50">
+        <i class="fas fa-arrow-up text-sm sm:text-base"></i>
+    </button>
+
+    <footer class="text-center py-8 border-t border-[#233554]">
+        <div class="container mx-auto px-6">
+            <p class="text-sm text-[#8892b0] mb-4">Designed & Built by Rahul Das</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/rahuldas-404" target="_blank" rel="noopener noreferrer" class="text-[#a8b2d1] hover:text-[#64ffda] transition-colors duration-300">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rahul-das-404/" target="_blank" rel="noopener noreferrer" class="text-[#a8b2d1] hover:text-[#64ffda] transition-colors duration-300">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="mailto:rahulkd403@gmail.com" class="text-[#a8b2d1] hover:text-[#64ffda] transition-colors duration-300">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
