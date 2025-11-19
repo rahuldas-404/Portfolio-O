@@ -190,16 +190,6 @@ if (skillsSection) {
     progressObserver.observe(skillsSection);
 }
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
 // Experience tabs
 const jobTabs = document.querySelectorAll('.job-tab');
 const jobPanels = document.querySelectorAll('.job-panel');
@@ -228,41 +218,6 @@ jobTabs.forEach(tab => {
         targetPanel.classList.remove('hidden');
     });
 });
-
-// Copy email to clipboard
-function copyEmail() {
-    const emailText = document.getElementById('email').innerText;
-    const toast = document.getElementById('email-copy-toast');
-    
-     if (navigator.clipboard) {
-        navigator.clipboard.writeText(emailText).then(() => {
-            showToast();
-        });
-     } else { // Fallback for older browsers
-        const textArea = document.createElement("textarea");
-        textArea.value = emailText;
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        try {
-            document.execCommand('copy');
-            showToast();
-        } catch (err) {
-            console.error('Fallback: Oops, unable to copy', err);
-        }
-        document.body.removeChild(textArea);
-     }
-}
-
-function showToast() {
-    const toast = document.getElementById('email-copy-toast');
-    toast.style.opacity = '1';
-    toast.style.transform = 'translate(-50%, 0)';
-    setTimeout(() => {
-        toast.style.opacity = '0';
-        toast.style.transform = 'translate(-50%, 0.5rem)';
-    }, 2000);
-}
 
 // Scroll reveal animations
 const revealElements = document.querySelectorAll('.reveal');
@@ -300,7 +255,7 @@ scrollToTopBtn.addEventListener('click', () => {
     });
 });
 
-// Enhanced email copy function
+// Copy email to clipboard
 function copyEmail() {
     const emailText = document.getElementById('email').innerText;
     const toast = document.getElementById('email-copy-toast');
